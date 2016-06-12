@@ -1,0 +1,140 @@
+﻿@model HoneyMustard.Interface.Models.Courses
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div align="center">
+
+    <h2 style="color:orangered;">Delete</h2>
+
+    <h3 style="color:red;">Are you sure you want to delete this Course?</h3>
+    <div>
+
+        <hr />
+        <dl>
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Contact.FirstMidName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Contact.FirstMidName)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CourseName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Module)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Module)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Credit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Credit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DayOfWeek)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DayOfWeek)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.activated_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.activated_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TimeClassBegins)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TimeClassBegins)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TimeClassEnds)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TimeClassEnds)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+
+            <dt>
+               
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,282 @@
+﻿<link rel="stylesheet" href="@Url.Content("~/content/styles/kendo.common.min.css")" />
+<link rel="stylesheet" href="@Url.Content("~/content/styles/kendo.default.min.css")" />
+<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.common.min.css" />
+<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.rtl.min.css" />
+<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.silver.min.css" />
+<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.mobile.all.min.css" />
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://kendo.cdn.telerik.com/2016.1.412/js/kendo.all.min.js"></script>
+
+@model HoneyMustard.Interface.Models.Courses
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 style="color:red">Editing the <b> @Model.CourseName</b> course</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CourseName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Module, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Module, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Module, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Credit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Credit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Credit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DayOfWeek, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DayOfWeek, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DayOfWeek, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContactID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.activated_date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.activated_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.activated_date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeClassBegins, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeClassBegins, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TimeClassBegins, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeClassEnds, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeClassEnds, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TimeClassEnds, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        @*//dropdown box with the 4 seasons*@
+        <script>
+
+            $("#ContactID").kendoComboBox({
+                placeholder: "Select Contact",
+                serverFiltering: true,
+                dataTextField: "Name",
+                dataValueField: "ContactID",
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "@Url.Action("ContactList", "NewGuidancePlan")",
+                            method: "POST"
+                        }
+                    }
+                }
+            });
+
+
+
+            $(document).ready(function () {
+                var data = [
+                    { text: "Male", value: "0" },
+                    { text: "Female", value: "1" }
+
+                ];
+
+
+                // create DropDownList from input HTML element
+                $("#Gender").kendoDropDownList({
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    dataSource: data,
+                    index: 0,
+                });
+
+                var gender = $("#Gender").data("kendoDropDownList");
+            });
+            $(document).ready(function () {
+
+                var data = [
+                    { text: "Online", value: "0" },
+                    { text: "At Compuskills", value: "1" }
+
+                ];
+                $("#Location").kendoDropDownList({
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    dataSource: data,
+                    index: 0,
+                });
+
+                var location = $("#Location").data("kendoDropDownList");
+            });
+
+            $(document).ready(function () {
+                var data = [
+                    { text: "Sunday", value: "0" },
+                    { text: "Monday", value: "1" },
+                    { text: "Tuesday", value: "2" },
+                    { text: "Wednesday", value: "3" },
+
+                    { text: "Thursday", value: "4" },
+                    { text: "Friday", value: "5" },
+
+
+                ];
+
+
+                // create DropDownList from input HTML element
+                $("#DayOfWeek").kendoDropDownList({
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    dataSource: data,
+                    index: 0,
+                });
+
+                var dayofweek = $("#DayOfWeek").data("kendoDropDownList");
+            });
+
+
+            $(document).ready(function () {
+                // create DateTimePicker from input HTML element
+                $("#activated_date").kendoDatePicker({
+                    format: "dd-MM-yyyy",
+                    value: new Date(),
+                    disableDates: ["Sa"],
+
+                });
+            });
+            $(document).ready(function () {
+                // create DateTimePicker from input HTML element
+                $("#StartDate").kendoDatePicker({
+                    format: "dd-MM-yyyy",
+
+                    value: new Date(),
+                    disableDates: ["Sa"],
+
+                });
+            });
+
+            $(document).ready(function () {
+                // create DateTimePicker from input HTML element
+                $("#EndDate").kendoDatePicker({
+                    format: "dd-MM-yyyy",
+
+                    value: new Date(),
+                    disableDates: ["Sa"],
+
+                });
+            });
+            $(document).ready(function () {
+                // create DateTimePicker from input HTML element
+                $("#TimeClassBegins").kendoTimePicker({
+                    value: new Date()
+                });
+            });
+            $(document).ready(function () {
+                // create DateTimePicker from input HTML element
+                $("#TimeClassEnds").kendoTimePicker({
+                    value: new Date()
+                });
+            });
+
+
+        </script>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn-sm alert-success"  />
+            </div>
+        </div>
+    </div>
+
+}
+<div style=" text-align:center">
+
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+</div>
+               
+        

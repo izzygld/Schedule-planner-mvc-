@@ -1,0 +1,151 @@
+﻿<link rel="stylesheet" href="@Url.Content("~/content/styles/kendo.common.min.css")" />
+<link rel="stylesheet" href="@Url.Content("~/content/styles/kendo.default.min.css")" />
+<script src="~/Scripts/CourseScripts.js"></script>
+
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@model HoneyMustard.Web.Models.CourseModels
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/MyLayoutPage.cshtml";
+}
+
+<style>
+    table, td, th {
+        border: 1px solid red;
+        border-color: red;
+    }
+
+    th {
+        color: orangered;
+    }
+
+    body {
+        align-content: center;
+        background-color: lightgrey;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    h2 {
+        font-weight: bold;
+        color: black;
+    }
+
+    h3 {
+        color: green;
+    }
+
+    p {
+        color: yellow;
+    }
+
+        p.inset {
+            font-weight: bold;
+            border-style: inset;
+            color: yellow;
+        }
+</style>
+
+<h1 align="center">Welcome!</h1>
+
+
+
+
+<p align="center">
+
+    @*<h2 align="center"> @Html.ActionLink("Create New Course", "Create")</h2>*@
+    @*<h3 align="center"> @Html.ActionLink("Search for a Course ", "Search")</h3>*@
+    <h2 align="center">
+        <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Create", "Courses")'">Create A New Course <span class="glyphicon glyphicon-plus"></span></button>
+
+        <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Search", "Courses")'">Search for a Course <span class="glyphicon glyphicon-search"></span></button>
+    </h2>
+    @*<button >
+            <span class="glyphicon glyphicon-search"></span> Search for a Course
+        </button>*@
+
+    <h4 align="center">
+        <a href="http://localhost:57598/Courses/Create">
+            <img id="album-list" src="http://files1.wts.edu/uploads/images/CTW%20Images/Demanding%20Reader/Create%20a%20Writing%20Schedule.jpg" alt="Create Schedule" style="width:100px;height:100px;border:0" />
+        </a>
+    </h4>
+
+    <br>
+    <br />
+</p>
+<h2 align="center"><b>List of Courses Currently Taking Place at Compuskills</b></h2>
+<br />
+<br />
+
+
+
+<div id="album-list" align="center" class="table-responsive ">
+    <table class="table-bordered table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Module</th>
+                <th>Gender Type</th>
+                <th>Comments</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (HoneyMustard.Web.Models.CourseModelsTableRow CourseList in @Model.Coursess)
+            {
+                <tr data-id="@CourseList.CourseID">
+                    <td>@CourseList.CourseName</td>
+                    <td>@CourseList.Module</td>
+                    <td>@CourseList.ParticapantsGender</td>
+                    <td>@CourseList.Comment</td>
+
+
+
+
+
+
+
+
+                    <td class=" inset button" style="    color:white;">
+
+                       
+                            @Html.ActionLink("Details", "Details", new { id = CourseList.CourseID }, new { @class = "btn btn-success btn-large" })
+                       
+
+
+                            @Html.ActionLink("Edit", "Edit", new { id = CourseList.CourseID }, new { @class = "btn btn-primary btn-large" })
+
+
+                        @Html.ActionLink("Delete", "Delete", new { id = CourseList.CourseID }, new { @class = "btn btn-danger btn-large" })
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group" style="text-align: center; clear: both">
+        <input id="print-List-Courses" class=" btn-default btn-large" name="Print List Of Courses" type="submit" value="Print & Save" />
+    </div>
+</div>
+@*<div id=" dailydeal">
+    
+    @Ajax.ActionLink("click here to see today's Discounted Course!",
+    "DailyDeal",
+    null,
+            new AjaxOptions
+            {
+                UpdateTargetId="dailydeal",
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "GET"
+            },
+                    new  {@class ="btn btn-primary" })
+
+    @Html.Partial("_DailyDeal")
+
+</div>*@
+@*<div id="deals"  class=" btn-default btn-large" name="see deals">  </div>*@         

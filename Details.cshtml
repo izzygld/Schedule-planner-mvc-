@@ -1,0 +1,168 @@
+﻿@model HoneyMustard.Web.Models.CourseModelsTableRow
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#print-List-Courses").on("click", function (e) {
+            window.print();
+        });
+
+    });
+
+    $(document).ready(function () {
+        $("#print-List-Course").on("click", function (e) {
+            window.print();
+        });
+
+    });
+
+
+</script>
+
+
+
+
+<div align="center">
+    <h4>Details of the <b style="color:red">@Model.CourseName course</b> taking place.</h4>
+    <hr />
+    <div class="form-group" style="text-align: center; clear: both">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+
+
+        <input id="print-List-Courses" class="btn btn-success" name="Print List Of Courses" type="submit" value="Print & Save" />
+    </div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Module)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Module)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeClassBegins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeClassBegins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeClassEnds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeClassEnds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activated_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activated_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+
+    </dl>
+</div>
+
+<div align="center" class="table-responsive">
+    <table class="table-bordered table-condensed ">
+        <thead>
+            <tr>
+                <th>Teachers First Name</th>
+                <th>Teachers Last Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (HoneyMustard.Web.Models.ContactListTableRow Contact in @Model.Contact)
+            {
+                <tr data-id="@Contact.ContactID">
+
+
+
+
+                    <td>@Contact.FirstMidName</td>
+                    <td>@Contact.LastName</td>
+
+
+
+
+
+
+                </tr>
+            }
+
+
+      
+
+        </tbody>
+    </table>
+   
+  
+</div><div class="form-group" style="text-align: center; clear: both">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+
+
+    <input id="print-List-Course" class="btn btn-success" name="Print List Of Courses" type="submit" value="Print & Save" />
+</div>
